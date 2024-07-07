@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sum of number</title>
+    <style>
+        .card{
+            width:360px;;
+            background-color:#ec9e90;
+            padding:5px 10px;
+            margin: 40px;
+            box-shadow: 0 0 5px 5px #0f0e0e;
+        }
+        .app-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .input-box{
+            width: 300px;
+            height: 30px;
+            margin: 10px auto;  
+            border-radius: 100px;     
+        }
+      .btn-reset,.btn-calculate{
+        background-color: #c5c9cbbf;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 100px;
+        border: 3px solid #374052cf; 
+        }
+        .btn-reset:hover,.btn-calculate:hover{
+        background-color: #34546e;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+   <div class="app-container">
+    <h1 class="app-heading">Sum of Two Numbers</h1>
+    <input type="text" class="input-box" id="input-num1"/>
+    <input type="text" class="input-box" id="input-num2"/>
+    <p class="text-result" id="text-result"></p>
+    <div>
+        <button type="button" class="btn-calculate" onclick="calSum()">Calculate</button>
+        <button type="button" class="btn-reset" onclick="reset()">Reset</button>
+    </div>
+    </div>
+   </div>
+    <script>
+      function calSum()
+    {
+        const num1Element = document.getElementById("input-num1")
+        const num2Element = document.getElementById("input-num2")
+
+        const Sum = parseInt(num1Element.value || 0) + parseInt(num2Element.value || 0)
+        const resultElement = document.getElementById("text-result")
+        resultElement.innerText = `Sum: ${Sum}`
+
+    }
+    function reset()
+    {
+        const num1Element = document.getElementById("input-num1")
+        num1Element.value = ""
+
+        const num2Element = document.getElementById("input-num2")
+        num2Element.value = ""
+
+        const resultElement = document.getElementById("text-result")
+    }
+     </script>
+  </body>
+</html>
